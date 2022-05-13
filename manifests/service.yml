@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "easyshoppingcluster-b443"
+    labels:
+        app: "easyshoppingcluster-b443"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+      name: http
+    selector:
+        app: "easyshoppingcluster-b443"
