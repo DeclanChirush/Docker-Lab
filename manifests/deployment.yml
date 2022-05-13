@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "easyshoppingcluster-b443"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "easyshoppingcluster-b443"
+  template:
+    metadata:
+      labels:
+        app: "easyshoppingcluster-b443"
+    spec:
+      containers:
+        - name: "easyshoppingcluster-b443"
+          image: "dockerlabregsitry.azurecr.io/easyshoppingcluster"
+          ports:
+          - containerPort: 5000
